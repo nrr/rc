@@ -7,7 +7,7 @@ do
     then
         source $customization
     fi
-end
+done
 
 # Local Variables:
 # mode:shell-script
