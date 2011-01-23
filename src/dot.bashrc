@@ -3,7 +3,7 @@
 
 for customization in ${HOME}/.bashrc.d/*
 do
-    if [ -f $customization -a -x $customization ]
+    if [ -f $customization ]
     then
         source $customization
     fi
