@@ -37,7 +37,7 @@ install_into_HOME() {
 	pushd $TD/$REPO_NAME-tip/src
 	for f in dot.*
 	do
-		mv -iv $f $HOME/${f#dot}
+		mv -nv $f $HOME/${f#dot}
 	done
 	popd
 }
