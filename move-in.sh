@@ -48,7 +48,7 @@ install_into_HOME() {
 			chmod u+x $f
 		fi
 
-		cp -b -n -v -a $f $HOME/${f#dot}
+		cp -b -v -a $f $HOME/${f#dot}
 	done
 	popd
 }
