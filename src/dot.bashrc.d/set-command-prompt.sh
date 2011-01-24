@@ -2,10 +2,11 @@
 # Set the command prompt.
 
 prompt_prepend=""
+
 case "$TERM" in
 	*xterm*| \
 	*screen*)
-		prompt_prepend="\[\033]0;[\u@\h T\l L$SHLVL C\! \D{%Y-%m-%d_%H:%M:%S_%Z}] \w\007\]"
+		prompt_prepend="\[\033]0;[\u@\h T\l L$SHLVL C\!] \w\007\]"
 		;;
 	*)
 		# Do nothing.
