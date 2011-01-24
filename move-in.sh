@@ -16,6 +16,10 @@ maybe_create_ssh_directory() {
 	fi
 }
 
+kill_bash_history() {
+	ln -sf /dev/null $HOME/.bash_history
+}
+
 pull_files_from_fossil() {
 	# This relies on TD above.
 
@@ -45,3 +49,4 @@ install_into_HOME() {
 pull_files_from_fossil
 install_into_HOME
 maybe_create_ssh_directory
+kill_bash_history
