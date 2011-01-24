@@ -11,8 +11,8 @@ REPO_NAME="nrr-dotfiles-bash-environment"
 maybe_create_ssh_directory() {
 	if [ ! -d $HOME/.ssh ]
 	then
-		mkdir $HOME/.ssh
-		chmod u=rwx,og-rwx $HOME/.ssh
+		mkdir -p -v $HOME/.ssh
+		chmod -v u=rwx,og-rwx $HOME/.ssh
 	fi
 }
 
@@ -41,11 +41,11 @@ install_into_HOME() {
 	pushd $TD/$REPO_NAME-tip/src
 	for f in dot.*
 	do
-		chmod -v u+rw,go-rwx $f
+		chmod -v u=rwx,go-rwx $f
 
-		if [ -d $f ]
+		if [ ! -d $f ]
 		then
-			chmod -v u+x $f
+			chmod -v u-x $f
 		fi
 
 		cp -b -v -a $f $HOME/${f#dot}
