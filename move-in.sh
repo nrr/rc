@@ -41,7 +41,14 @@ install_into_HOME() {
 	pushd $TD/$REPO_NAME-tip/src
 	for f in dot.*
 	do
-		mv -nv $f $HOME/${f#dot}
+		chmod u+rw,go-rwx $f
+
+		if [ -d $f ]
+		then
+			chmod u+x $f
+		fi
+
+		cp -b -n -v -a $f $HOME/${f#dot}
 	done
 	popd
 }
