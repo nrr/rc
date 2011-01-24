@@ -17,7 +17,7 @@ maybe_create_ssh_directory() {
 }
 
 kill_bash_history() {
-	ln -sf /dev/null $HOME/.bash_history
+	ln -svf /dev/null $HOME/.bash_history
 }
 
 pull_files_from_fossil() {
