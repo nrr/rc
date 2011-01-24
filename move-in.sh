@@ -24,7 +24,6 @@ pull_files_from_fossil() {
 	repo_path="/zip/${repo_name}-tip.zip?uuid=tip"
 	url="http://${repo_host}/${repo_name}/zip/${repo_name}-tip.zip?uuid=tip"
 
-	#curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/zip/nrr-dotfiles-bash-environment-tip.zip?uuid=tip > /tmp/nrr-dotfiles-bash-environment-tip.zip
 	curl -LsSf $url > $TD/${repo_name}-tip.zip
 
 	pushd $TD
@@ -38,10 +37,11 @@ install_into_HOME() {
 	pushd $TD/$REPO_NAME-tip/src
 	for f in dot.*
 	do
-		echo ${f/dot./.}
+		mv -iv $f $HOME/${f#dot}
 	done
 	popd
 }
 
 pull_files_from_fossil
 install_into_HOME
+maybe_create_ssh_directory
