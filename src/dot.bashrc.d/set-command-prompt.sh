@@ -14,6 +14,8 @@ esac
 
 export PS1="${prompt_prepend}\h\\$ "
 
+unset prompt_prepend
+
 # Local Variables:
 # mode:shell-script
 # End:

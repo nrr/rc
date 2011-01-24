@@ -8,6 +8,7 @@ do
         source $customization
     fi
 done
+unset customization
 
 # Local Variables:
 # mode:shell-script
