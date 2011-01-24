@@ -1,6 +1,12 @@
 # $HOME/.bash_logout
 
-[ "$PS1" ] && clear
+case "$-" in
+	*i*)
+		clear
+		;;
+	*)
+		;;
+esac
 
 # Local Variables:
 # mode:shell-script
