@@ -13,7 +13,7 @@ case "$TERM" in
 		;;
 esac
 
-export PS1="${prompt_prepend}\h\\$ "
+export PS1="${prompt_prepend}\[\033[1;34m\]\h\[\033[0m\]\\$ "
 
 unset prompt_prepend
 
