@@ -1,14 +1,24 @@
 # $HOME/.bashrc
 # Personal environment file for interactive bash subshells.
 
-for customization in ${HOME}/.bashrc.d/*
+if [ -f /etc/bashrc ]
+then
+	source /etc/bashrc
+fi
+
+for i in ${HOME}/.bashrc.d/*.sh
 do
-    if [ -f $customization ]
-    then
-        source $customization
-    fi
+	if [ -r "$i" ]
+	then
+		if [ "$PS1" ]
+		then
+			source "$i"
+		else
+			source "$i" > /dev/null 2>&1
+		fi
+	fi
 done
-unset customization
+unset i
 
 # Local Variables:
 # mode:shell-script
