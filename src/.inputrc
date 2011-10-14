@@ -30,6 +30,8 @@ $if Bash
 	# List possible completions instead of ringing bell
 	set show-all-if-ambiguous on
 
+	set show-all-if-unmodified on
+
 	# From the readline documentation at
 	# http://tiswww.tis.case.edu/php/chet/readline/readline.html#SEC12
 
