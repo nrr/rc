@@ -2,18 +2,22 @@
 # Set the command prompt.
 
 prompt_prepend=""
+color_prepend=""
+color_append=""
 
 case "$TERM" in
 	*xterm*| \
 	*screen*)
 		prompt_prepend="\[\033]0;[\u@\h T\l L$SHLVL C\!] \w\007\]"
+		color_prepend="\[\033[1;34m\]"
+		color_append="\[\033[0m\]"
 		;;
 	*)
 		# Do nothing.
 		;;
 esac
 
-export PS1="${prompt_prepend}\[\033[1;34m\]\h\[\033[0m\]\\$ "
+export PS1="${prompt_prepend}${color_prepend}\h${color_append}\\$ "
 
 unset prompt_prepend
 
