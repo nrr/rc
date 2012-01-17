@@ -6,7 +6,7 @@
 #
 
 TD=`mktemp -d XXXXXXX`
-REPO_NAME="nrr-dotfiles-bash-environment"
+REPO_NAME="dotfiles-bash-environment"
 
 maybe_create_ssh_directory() {
 	if [ ! -d $HOME/.ssh ]
@@ -23,7 +23,7 @@ kill_bash_history() {
 pull_files_from_fossil() {
 	# This relies on TD above.
 
-	repo_host="fossil.moyi.us"
+	repo_host="chiselapp.com/user/nrr/repository"
 	repo_name=${REPO_NAME}
 	repo_path="/zip/${repo_name}-tip.zip?uuid=tip"
 	url="http://${repo_host}/${repo_name}/zip/${repo_name}-tip.zip?uuid=tip"
