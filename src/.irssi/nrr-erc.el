@@ -36,15 +36,6 @@
 ;; (defun nrr-erc-do-nickserv-identify (credentials)
 ;;   )
 
-;; (add-to-list 'load-path "~/elim/elisp")
-;; (load-library "garak")
-
-(require 'speedbar)
-(speedbar-add-supported-extension ".rb")
-(speedbar-add-supported-extension ".sass")
-(speedbar-add-supported-extension ".haml")
-(speedbar-add-supported-extension ".erb")
-
 (autoload 'erc "erc" "" t)
 
 (setq erc-user-full-name "Nathaniel R. Reindl")
@@ -70,15 +61,16 @@
   "#keryx"
   "#perl-cats"
   "#concatenative"
-; "#math"
-; "#not-math"
+  ;; "#math"
+  ;; "#not-math"
 ;  "#perl"
 ;  "#rails"
   "#renraku"
 ;  "#ruby"
   "#jenkins"
   "#stackoverflow"
-  "#startups")
+;  "#startups"
+)
  (("irc.perl.org")
   "#perl"
   "#moose"
@@ -92,12 +84,14 @@
 ;  "#fchan")
  (("irc.furnet.org")
   "#bobchannel"
+  "#fsr"
 ;  "#lobby"
   "#furaffinity-dev"
   "#otters")
  (("irc.synirc.net")
   "#ocs"
-  "#holegan")
+;  "#holegan"
+)
  (("irc.darkmyst.org")
   "#e621")
  (("irc.anthrochat.net")
