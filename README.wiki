@@ -1,0 +1,19 @@
+<title>Home page</title>
+
+To install:
+
+<verbatim>curl -LsSf http://chiselapp.com/user/nrr/repository/dotfiles-general/doc/trunk/move-in.sh | sh -</verbatim>
+
+To get your own local copy over secure https, issue the following commands:
+<pre>
+fossil clone https://chiselapp.com/user/nrr/repository/dotfiles-general dotfiles-general.fossil
+mkdir dotfiles-general && cd dotfiles-general
+fossil open ../dotfiles-general.fossil
+</pre>
+
+To get your own local copy over normal http, issue the following commands:
+<pre>
+fossil clone http://chiselapp.com/user/nrr/repository/dotfiles-general dotfiles-general.fossil
+mkdir dotfiles-general && cd dotfiles-general
+fossil open ../dotfiles-general.fossil
+</pre>
