@@ -1,0 +1,24 @@
+[user]
+	email = nrr@corvidae.org
+	name = Nathaniel R Reindl
+
+[alias]
+	diff-remote = diff origin..master
+	ff = pull --ff-only
+	export-branch = !git format-patch --stdout $1 > ~/Desktop/`git branch-name`.diff
+	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
+	s = status
+	a = git add . && git status
+	au = git add -u . && git status
+	aa = git add . && git add -u . && git status
+	c = commit
+	cm = commit -m
+	ca = commit --amend # careful
+	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit
+	d = diff --color-words
+	dh = diff --color-words head
+	master = checkout master
+	spull = svn rebase
+	spush = svn dcommit
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
