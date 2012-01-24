@@ -1,0 +1,15 @@
+%packager "Nathaniel R. Reindl <nrr@corvidae.org>"
+%_topdir %(echo $HOME)/workspace/rpmbuild
+
+%debug_package %{nil}
+
+%_tmppath %(echo $TMPDIR)
+
+# GNU Privacy Guard configuration follows.
+%_signature gpg
+%_gpg_name Nathaniel R. Reindl <nrr@corvidae.org>
+%_gpg_path %(echo $HOME)/.gnupg
+
+
+# Show all architectures of installed packages.
+%_query_all_fmt %%{name}-%%{version}-%%{release}.%%{arch}
