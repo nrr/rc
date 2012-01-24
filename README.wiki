@@ -8,8 +8,9 @@ This is part of a series. In this particular repository, you will find:
   *  SSH configuration
   *  GNU Privacy Guard configuration
   *  Bazaar configuration
-  *  Mercurial configuration
+  *  CVS configuration
   *  Git configuration
+  *  Mercurial configuration
   *  tmux configuration
 
 To install:
