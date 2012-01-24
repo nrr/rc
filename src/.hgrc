@@ -1,0 +1,60 @@
+[ui]
+	ignore = ~/.hgignore
+	ssh = ssh -C
+
+[diff]
+	git = True
+	showfunc = True
+
+[extensions]
+	bookmarks =
+	churn =
+	color =
+	convert =
+	debugshell = ~/.hgext/debugshell.py
+	extdiff =
+	gpg =
+	graphlog =
+	highlight =
+	mq =
+	pager =
+	parentrevspec =
+	patchbomb =
+	progress =
+	purge =
+	rebase =
+	record =
+	schemes =
+	transplant =
+
+[alias]
+	bm = bookmark
+	df = diff
+	dlog = log --style ~/.hgext/map-cmdline.dlog
+	last = log -l 5
+	nlog = log --style ~/.hgext/map-cmdline.nlog
+	nudge = push -r .
+	qlog = log -pvr qbase:qtip
+	show = log -pvr
+	slog = log --style ~/.hgext/map-cmdline.slog
+	sglog = glog --style ~/.hgext/map-cmdline.sglog
+	qexport = export -r qbase:qtip
+	qst = qseries -v
+	top = !"$HG" log -M --template '{author|person}\n' | sed 's/"//g' | sort | uniq -c | sort -rn | head -n `expr "$1" \| 10`
+
+[bookmarks]
+	track.current = True
+
+[color]
+	diff.deleted = red bold
+
+[extdiff]
+	cmd.vimdiff = vim
+	opts.vimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+[pager]
+	attend = annotate, cat, df, diff, dlog, export, glog, incoming, involving, last, log, nlog, outgoing, qdiff, qlog, show, sglog, slog
+
+[user]
+	email = nrr@corvidae.org
+	name = Nathaniel R Reindl
