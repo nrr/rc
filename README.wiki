@@ -1,5 +1,10 @@
 <title>Home page</title>
 
+This is part of a series. In this particular repository, you will find:
+
+  *  irssi
+  *  tinyfugue
+
 To install:
 
 <verbatim>curl -LsSf http://chiselapp.com/user/nrr/repository/dotfiles-general/doc/trunk/move-in.sh | sh -</verbatim>
