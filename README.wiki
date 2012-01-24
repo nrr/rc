@@ -12,6 +12,7 @@ This is part of a series. In this particular repository, you will find:
   *  Git configuration
   *  Mercurial configuration
   *  tmux configuration
+  *  SQLite monitor configuration
 
 To install:
 
