@@ -4,6 +4,13 @@ This is part of a series. In this particular repository, you will find:
 
   *  irssi
   *  tinyfugue
+  *  RPM building configuration
+  *  SSH configuration
+  *  GNU Privacy Guard configuration
+  *  Bazaar configuration
+  *  Mercurial configuration
+  *  Git configuration
+  *  tmux configuration
 
 To install:
 
