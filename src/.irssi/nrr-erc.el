@@ -52,6 +52,7 @@
 (nrr-erc-connect erc-espernet "irc.esper.net" 6667 "nrr")
 (nrr-erc-connect erc-vgmix "irc.vgmix.com" 6667 "nrr")
 (nrr-erc-connect erc-xtil "irc.xtil.net" 6667 "nrr")
+(nrr-erc-connect erc-intelminer "irc.intelminer.com" 9999 "nrr")
 ;;(nrr-erc-connect erc-distrust "irc.distrust.us" 6667 "nrr")
 ;;(nrr-erc-connect erc-skaia "irc.skaia.net" 6667 "confusedTopologist")
 
@@ -114,7 +115,9 @@
  (("irc.vgmix.com")
   "#magfest"
   "#vgmix"
-  "#vgmixdev"))
+  "#vgmixdev")
+ (("irc.intelminer.com")
+  "#intelminer"))
 ; (("irc.skaia.net")
 ;  "#radio"))
 
