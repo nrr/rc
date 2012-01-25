@@ -9,7 +9,7 @@ case "$TERM" in
 	*xterm*| \
 	*screen*)
 		prompt_prepend="\[\033]0;[\u@\h T\l L$SHLVL C\!] \w\007\]"
-		color_prepend="\[\033[1;34m\]"
+		color_prepend="\[\033[1;37;44m\]"
 		color_append="\[\033[0m\]"
 		;;
 	*)
