@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Download the bash environment from fossil.moyi.us and install them to $HOME.
+# Un-break the Broken Again shell.
 #
 # Usage: curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/doc/trunk/move-in.sh | sh -
 #
