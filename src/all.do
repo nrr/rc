@@ -1,1 +1,1 @@
-redo-ifchange all
+redo-ifchange _all
