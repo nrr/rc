@@ -1,0 +1,62 @@
+! vim:ts=8
+
+! xterm
+.xterm*background:		gray10
+.xterm*cursorColor:		green
+.xterm*foreground:		white
+.xterm*borderColor:		green
+!.xterm*highlightColor:		yellow
+.xterm*colorBD:			black
+.xterm*colorBDMode:		false
+
+.xterm*saveLines:		5000
+.xterm*scrollBar:		true
+.xterm*scrollbar*width:		8
+
+.xterm*selectToClipboard:	true
+.xterm*utmpInhibit:		true
+! hide when i type
+.xterm*pointerMode:		1
+
+.xterm*allowSendEvents:		false
+.xterm*dynamicColors:		true
+.xterm*allowColorOps:		true
+
+.xterm*title:			xterm
+.xterm*termName:		xterm-256color
+
+.xterm*visualBell:		false
+.xterm*cursorBlink:		true
+
+.xterm*Scrollbar.foreground:	gray10
+.xterm*Scrollbar.background:	gray90
+.xterm*Scrollbar.minimumThumb:	20
+
+! make command+v paste like a normal mac app
+!.xterm*VT100.translations: #override\
+!    Meta <KeyPress> V: insert-selection(PRIMARY, CUT_BUFFER0)
+
+! vncviewer scroll bars
+*viewport.horizontal.height:	10
+*viewport.vertical.width:	10
+
+! make xaw scrollbars act like normal ones 
+.xterm*Scrollbar.translations: #override\
+    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+    <Btn2Down>: StartScroll(Forward) \n\
+    <Btn3Down>: StartScroll(Backward) \n\
+    <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+    <BtnUp>: NotifyScroll(Proportional) EndScroll()
+! vncviewer
+*viewport.horizontal.translations: #override\
+    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+    <Btn2Down>: StartScroll(Forward) \n\
+    <Btn3Down>: StartScroll(Backward) \n\
+    <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+    <BtnUp>: NotifyScroll(Proportional) EndScroll()
+*viewport.vertical.translations: #override\
+    <Btn1Down>: StartScroll(Continuous) MoveThumb() NotifyThumb() \n\
+    <Btn2Down>: StartScroll(Forward) \n\
+    <Btn3Down>: StartScroll(Backward) \n\
+    <Btn1Motion>: MoveThumb() NotifyThumb() \n\
+    <BtnUp>: NotifyScroll(Proportional) EndScroll()
