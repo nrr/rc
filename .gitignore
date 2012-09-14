@@ -1,1 +1,3 @@
+build
 .do_built*
+src/.ssh/config
