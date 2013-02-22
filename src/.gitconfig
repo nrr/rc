@@ -1,6 +1,6 @@
 [user]
 	email = nrr@corvidae.org
-	name = Nathaniel R Reindl
+	name = Nathaniel Reindl
 
 [alias]
 	diff-remote = diff origin..master
