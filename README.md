@@ -56,10 +56,12 @@ this is how i install an archive from my local working copy:
 	DIR="${HOME}/lib/github.com/nrr/dotfiles"
 	TAG="$(date -u -I)"
 	WORKSPACE="${HOME}/w/git/github.com/nrr/dotfiles"
+	
 	cd "${WORKSPACE}"
 	git archive --format=tar.xz --prefix="HEAD-${TAG}/" HEAD > "${DIR}/HEAD-${TAG}.tar.xz"
+	
 	cd "${DIR}"
-	rm -rf "HEAD-${TAG}"
+	[ -d "HEAD-${TAG}" ] && rm -rf "HEAD-${TAG}"
 	tar axvf "HEAD-${TAG}.tar.xz"
 	ln -s "HEAD-${TAG}" next
 	
