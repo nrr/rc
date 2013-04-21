@@ -33,16 +33,10 @@ this is how i install an archive from github:
 	
 	mkdir -p "${DIR}"
 	curl -LsSf "${URL}" > "${ARCHIVE}"
-	
-	REVISION="$(tar tavf "${ARCHIVE}" | head -n 1 | perl -pe 's/.*([[:alnum:]]+).$/$1/g')"
-	cd "${DIR}"
-	tar axvf "${ARCHIVE}"
-	mv "nrr-dotfiles-${REVISION}" "${REVISION}"
-	ln -s "${REVISION}" next
-	
-	unlink previous
-	mv current previous
-	mv next current
+	rm -rf /tmp/nrr-dotfiles*
+	tar -C /tmp -axvf "${ARCHIVE}"
+	cd /tmp/nrr-dotfiles*
+	redo install
 	
 this is how i clone the repository for working on it:
 
@@ -50,7 +44,7 @@ this is how i clone the repository for working on it:
 	REMOTE="git@github.com:nrr/dotfiles"
 	mkdir -p "${WORKSPACE}"
 	git clone "${REMOTE}" "${WORKSPACE}"
-	
+
 this is how i install an archive from my local working copy:
 
 	WORKSPACE="${HOME}/w/git/github.com/nrr/dotfiles"
