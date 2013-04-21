@@ -51,3 +51,7 @@ this is how i install an archive from my local working copy:
 	cd "${WORKSPACE}"
 	redo install
 
+this is how i link these things as my actual dotfiles in `$HOME`:
+
+	redo link
+
