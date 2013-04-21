@@ -53,20 +53,7 @@ this is how i clone the repository for working on it:
 	
 this is how i install an archive from my local working copy:
 
-	DIR="${HOME}/lib/github.com/nrr/dotfiles"
-	TAG="$(date -u -I)"
 	WORKSPACE="${HOME}/w/git/github.com/nrr/dotfiles"
-	
 	cd "${WORKSPACE}"
-	git archive --format=tar.xz --prefix="HEAD-${TAG}/" HEAD > "${DIR}/HEAD-${TAG}.tar.xz"
-	
-	cd "${DIR}"
-	[ -d "HEAD-${TAG}" ] && rm -rf "HEAD-${TAG}"
-	tar axvf "HEAD-${TAG}.tar.xz"
-	ln -s "HEAD-${TAG}" next
-	
-	unlink previous
-	mv current previous
-	mv next current
-	
-(as an aside: `git config tar.tar.xz.command "xz -c"`)
+	redo install
+

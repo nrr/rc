@@ -1,14 +1,16 @@
 exec >&2
 redo-ifchange _all
 
-: ${INSTALL:=install}
-: ${DESTDIR:=}
-: ${PREFIX:=$HOME}
+DESTDIR="${HOME}/lib/github.com/nrr/dotfiles"
+TAG="$(date -u +%Y%m%d%H%M%S)"
 
-echo "Installing to: $DESTDIR$PREFIX"
+mkdir -p "${DESTDIR}"
+[ -d "HEAD-${TAG}" ] && rm -rf "HEAD-${TAG}"
+git archive --format=tar --prefix="HEAD-${TAG}/" HEAD | tar -C "${DESTDIR}" -xf -
+(
+	cd "${DESTDIR}"
+	[ -L previous ] && rm -f previous
+	[ -L current ] && mv -f current previous
+	ln -s "HEAD-${TAG}" current
+)
 
-# make dirs
-find ./build/. -type d -exec $INSTALL -d '{}' \;
-
-# binaries
-find ./build/. -type f -exec $INSTALL -m 0644 '{}'
