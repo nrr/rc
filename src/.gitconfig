@@ -16,7 +16,7 @@
 	ca = commit --amend # careful
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
-        lol = log --oneline --graph --decorate
+	lol = log --oneline --graph --decorate
 	d = diff --color-words
 	dh = diff --color-words head
 	master = checkout master
@@ -26,3 +26,4 @@
 
 [color]
 	ui = true
+
