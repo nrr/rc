@@ -1,6 +1,8 @@
 exec >&2
 redo-ifchange _all
 
+DESTDIR="${HOME}/lib/github.com/nrr/dotfiles"
+
 (
 	cd "${HOME}"
 	ln -sf /dev/null .mysql_history
