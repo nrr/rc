@@ -8,5 +8,6 @@ redo-ifchange _all
 	ln -sf /dev/null .sqlite_history
 	ln -sf "${DESTDIR}"/current/src/.ssh/config "${HOME}"/.ssh/config
 	ln -sf "${DESTDIR}"/current/src/.tmux.conf "${HOME}"/.tmux.conf
+	ln -sf "${DESTDIR}"/current/src/.gitconfig "${HOME}"/.gitconfig
 )
 
