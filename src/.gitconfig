@@ -9,14 +9,15 @@
 	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 	s = status -s
 	a = git add . && git status
-	au = git add -u . && git status
-	aa = git add . && git add -u . && git status
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . && git status
 	c = commit
 	cm = commit -m
 	ca = commit --amend # careful
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
 	lol = log --oneline --graph --decorate
+	lawl = log --all --oneline --graph --decorate
 	d = diff --color-words
 	dh = diff --color-words head
 	master = checkout master
@@ -25,6 +26,7 @@
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	fixme = grep --heading --break --ignore-case -e 'FIX: *' -e 'FIXME: *'
 	todo  = grep --heading --break --ignore-case -e 'TODO: *'
+	bbb = reset --hard HEAD^
 
 [color]
 	ui = true
