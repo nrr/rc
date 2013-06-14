@@ -17,7 +17,7 @@ case "$TERM" in
 		;;
 esac
 
-export PS1="${prompt_prepend}(\$?)${color_prepend}\h${color_append}% "
+export PS1="${prompt_prepend}(\$?)${color_prepend}\h${color_append}\\$ "
 
 unset prompt_prepend
 
