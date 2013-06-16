@@ -1,2 +1,2 @@
-DEPS=".ssh/all"
+DEPS=".bashrc"
 redo-ifchange $DEPS
