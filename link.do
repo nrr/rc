@@ -6,6 +6,7 @@ DESTDIR="${HOME}/lib/github.com/nrr/rc-bash"
 (
 	cd "${HOME}"
 	ln -sf /dev/null .bash_history
+	ln -sf /dev/null .inputrc
 	ln -sf "${DESTDIR}"/current/src/.bash_logout "${HOME}"/.bash_logout
 	ln -sf "${DESTDIR}"/current/src/.bash_history "${HOME}"/.bash_history
 	ln -sf "${DESTDIR}"/current/src/.bash_profile "${HOME}"/.bash_profile
