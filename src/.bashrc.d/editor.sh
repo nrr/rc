@@ -1,0 +1,2 @@
+export EDITOR=E
+unset FCEDIT VISUAL
