@@ -5,8 +5,8 @@ this is part of a series.
 ## what is this?
 
 these are my customizations for the various tools that i use on a
-regular basis, with some exceptions like bash and emacs. you can find
-those customizations elsewhere.
+regular basis, with some exceptions like bash and the plan 9 tools. you
+can find those customizations elsewhere.
 
 of note, i keep customizations for the following here in various
 states of completeness:
@@ -25,7 +25,7 @@ states of completeness:
 
 ## my method to the madness
 
-this is how i install an archive from github:
+this is vaguely how i install an archive from github:
 
 	DIR="${HOME}/lib/github.com/nrr/dotfiles"
 	URL="https://api.github.com/repos/nrr/dotfiles/tarball"
@@ -38,14 +38,14 @@ this is how i install an archive from github:
 	cd /tmp/nrr-dotfiles*
 	redo install
 	
-this is how i clone the repository for working on it:
+this is vaguely how i clone the repository for working on it:
 
 	WORKSPACE="${HOME}/w/git/github.com/nrr/dotfiles"
 	REMOTE="git@github.com:nrr/dotfiles"
 	mkdir -p "${WORKSPACE}"
 	git clone "${REMOTE}" "${WORKSPACE}"
 
-this is how i install an archive from my local working copy:
+this is vaguely how i install an archive from my local working copy:
 
 	WORKSPACE="${HOME}/w/git/github.com/nrr/dotfiles"
 	cd "${WORKSPACE}"
