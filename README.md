@@ -65,7 +65,7 @@ i hope to make some of the actual development work for this suck less
 since, well, it's kinda terrible at the moment. one thought is to do the
 following:
 
-    git clone --no-checkout github.com:nrr/rc-bash.git
+    git clone --no-checkout github.com:nrr/rc.git
     git config core.worktree="../../"
     git checkout master
 
