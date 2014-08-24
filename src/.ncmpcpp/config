@@ -1,5 +1,5 @@
-ic_dir = "/home/nrr/Music/"  
-mpd_music_dir = "/home/nrr/Music/"
+ic_dir = "/home/nrr/annex/media/music/"  
+mpd_music_dir = "/home/nrr/annex/media/music/"
 
 ##### connection settings #####
 mpd_host = "localhost"
