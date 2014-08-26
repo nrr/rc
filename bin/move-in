@@ -5,7 +5,10 @@ set -e
 set -u
 set -o pipefail
 
-mkdir -p $HOME/w/git/github.com/nrr
+ROOT="$HOME/w/git/github.com/nrr"
+
+mkdir -p "$ROOT"
+cd "$ROOT"
 git clone --no-checkout github.com:nrr/rc.git
 cd rc
 git config core.worktree="../../../../"
