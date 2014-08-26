@@ -5,8 +5,8 @@ set -e
 set -u
 set -o pipefail
 
-mkdir -p $HOME/w/github.com/nrr
+mkdir -p $HOME/w/git/github.com/nrr
 git clone --no-checkout github.com:nrr/rc.git
 cd rc
-git config core.worktree="../../../"
+git config core.worktree="../../../../"
 git checkout master
