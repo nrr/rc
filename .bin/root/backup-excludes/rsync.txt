@@ -1,0 +1,6 @@
+/home/nrr/annex/
+/mnt/backup/
+/tmp/
+/var/cache/apt/
+/var/cache/chef/
+/var/tmp/
