@@ -1,9 +1,8 @@
-# $HOME/.bashrc.d/plan9port.sh
-# Support for Plan 9 from User Space
+PLAN9=/usr/local/plan9
+PATH=$PATH:$PLAN9/bin
 
-PLAN9=$HOME/opt/plan9port/current export PLAN9
-PATH=$PATH:$PLAN9/bin export PATH
+# for rc
+home=$HOME
+user=$USER
 
-# Local Variables:
-# mode:shell-script
-# End:
+export PLAN9 PATH home user
