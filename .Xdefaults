@@ -6,10 +6,13 @@
 .xterm*foreground:		white
 .xterm*borderColor:		green
 !.xterm*highlightColor:		yellow
+!.xterm*highlightTextColor: black
 .xterm*colorBD:			black
 .xterm*colorBDMode:		false
 
-.xterm*saveLines:		5000
+!.xterm*faceName: Monospace-8
+
+.xterm*saveLines:      65535
 .xterm*scrollBar:		true
 .xterm*scrollbar*width:		8
 
@@ -31,6 +34,8 @@
 .xterm*Scrollbar.foreground:	gray10
 .xterm*Scrollbar.background:	gray90
 .xterm*Scrollbar.minimumThumb:	20
+
+.xterm*Geometry: 132x48
 
 ! make command+v paste like a normal mac app
 !.xterm*VT100.translations: #override\
