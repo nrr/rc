@@ -31,3 +31,11 @@
 [color]
 	ui = true
 
+[tar "tar.xz"]
+	command = xz -c
+
+[http]
+	sslVerify = true
+
+[push]
+	default = matching
