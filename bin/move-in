@@ -11,6 +11,10 @@ mkdir -p "$ROOT"
 cd "$ROOT"
 git clone --no-checkout github.com:nrr/rc.git
 
+cat <<EOF > $HOME/.git
+gitdir: $ROOT/rc/.git
+EOF
+
 cd rc
 git config core.worktree "$HOME"
 git checkout master
