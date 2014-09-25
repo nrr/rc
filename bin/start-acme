@@ -1,9 +1,9 @@
-#! /usr/bin/env rc -l
+#! /usr/bin/env rc
 tabstop=4
 font=$PLAN9/font/lucsans/unicode.6.font
 tfont=$PLAN9/font/lucsans/typeunicode.6.font
 
-main=$NAMESPACE
+main=`{namespace}
 NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
 if(test -e $main/factotum)
 	ln -s $main/factotum $NAMESPACE
