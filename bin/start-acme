@@ -1,0 +1,20 @@
+#! /usr/bin/env rc -l
+tabstop=4
+font=$PLAN9/font/lucsans/unicode.6.font
+tfont=$PLAN9/font/lucsans/typeunicode.6.font
+
+main=$NAMESPACE
+NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
+if(test -e $main/factotum)
+	ln -s $main/factotum $NAMESPACE
+
+pgrep -n plumber || plumber
+
+fn cd {
+	builtin cd $1 && awd $sysname
+}
+
+PAGER=nobs
+TERM=dumb
+SHELL=rc
+exec acme -a -f $font -F $tfont $*
