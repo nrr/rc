@@ -4,7 +4,7 @@ set -u
 set -e
 set -o pipefail
 
-which git-up || exit 110
+which git || exit 110
 
 cd $HOME
-git up
+git fetch && git rebase
