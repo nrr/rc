@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -u
+set -e
+set -o pipefail
+
+repository="${1:-}"
+[ "z${repository}" != "z" ] || exit 110
+shift
+
+exec env CVSROOT="$HOME/v/cvs/$repository" "$@"

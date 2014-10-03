@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+git config user.name "Nathaniel Reindl"
+git config user.email "nathaniel.reindl@turner.com"
