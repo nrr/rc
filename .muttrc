@@ -1,5 +1,10 @@
+unset allow_8bit
+unset allow_cursor
+
+set realname="Nathaniel Reindl"
+unmy_hdr *
+
 set record = +sent-`date +%Y%m`
-set hostname = SDF.LONESTAR.ORG
 set sort = threads
 set mbox_type = Maildir
 set mbox = ~/Mail/read-`date +%Y%m`
@@ -13,7 +18,11 @@ toggle menu_scroll
 ignore *
 unignore date from to cc x-mailer subject
 
-send-hook . 'set signature=~/.signature; my_hdr From: Nathaniel Reindl <fiction@sdf.lonestar.org>'
+my_hdr From: Nathaniel Reindl <nrr@corvidae.org>
+alternates (nrr@corvidae.org|fiction@sdf.lonestar.org)
+
+send-hook . 'my_hdr From: Nathaniel Reindl <nrr@corvidae.org>'
+send-hook . 'set signature=~/.signature'
 
 color hdrdefault brightwhite black
 color indicator brightwhite blue
