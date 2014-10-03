@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+set -u
+set -e
+set -o pipefail
+
+which git-up || exit 110
+
+for r in $HOME/d $HOME/j
+do
+	pushd $r
+	git up
+	popd
+done
