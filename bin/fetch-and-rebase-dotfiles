@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+set -u
+set -e
+set -o pipefail
+
+which git-up || exit 110
+
+cd $HOME
+git up
