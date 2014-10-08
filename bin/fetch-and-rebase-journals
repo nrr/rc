@@ -10,5 +10,6 @@ for r in $HOME/d $HOME/j
 do
 	pushd $r
 	git up
+    git push --all origin
 	popd
 done

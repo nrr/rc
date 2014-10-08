@@ -8,3 +8,4 @@ which git || exit 110
 
 cd $HOME
 git fetch && git rebase
+git push --all origin
