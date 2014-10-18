@@ -8,7 +8,7 @@
 	export-branch = !git format-patch --stdout $1 > ~/Desktop/`git branch-name`.diff
 	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 	s = status -sb
-	a = git add . && git status
+	a = !git add . && git status
 	au = !git add -u . && git status
 	aa = !git add . && git add -u . && git status
 	c = commit
@@ -23,8 +23,8 @@
 	master = checkout master
 	spull = svn rebase
 	spush = svn dcommit
-	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-	fixme = grep --heading --break --ignore-case -e 'FIX: *' -e 'FIXME: *'
+	alias = !git config --get-regexp 'alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+	fixme = grep --heading --break --ignore-case -e 'FIX: *' -e 'FIXME: *' -e 'XXX: *'
 	todo  = grep --heading --break --ignore-case -e 'TODO: *'
 	bbb = reset --hard HEAD^
 
