@@ -2,6 +2,7 @@
 tabstop=4
 font=$PLAN9/font/lucsans/unicode.6.font
 tfont=$PLAN9/font/lucsans/typeunicode.6.font
+path=($home/bin/acme $path)
 
 main=`{namespace}
 NAMESPACE=`{mktemp -d /tmp/acme.XXXXXX} || exit
