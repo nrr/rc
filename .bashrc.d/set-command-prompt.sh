@@ -21,6 +21,8 @@ export PS1="${prompt_prepend}(\$?)${color_prepend}\h${color_append}\\$ "
 
 unset prompt_prepend
 
+[ "$TERM" == "xterm-256color" -a -x $HOME/bin/xtfix ] && $HOME/bin/xtfix
+
 [ "x$TERM_PROGRAM" == "xApple_Terminal" -a \
 	-f $HOME/bin/RandomColorTerminal.scpt ] &&
 	cat $HOME/bin/RandomColorTerminal.scpt | osascript -
