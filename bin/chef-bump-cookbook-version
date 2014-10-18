@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+#
+# call as: chef-bump-cookbook-version foo 0.9.1 0.9.2 knife node edit foo.atl.corp.yaks.io
+
+set -u
+set -e
+set -o pipefail
+
+SED_SCRIPT=$(mktemp)
+
+COOKBOOK_NAME=${1:-}
+shift
+COOKBOOK_CURRENT_VERSION=${1:-}
+shift
+COOKBOOK_NEW_VERSION=${1:-}
+shift
+
+cat <<EOF >$SED_SCRIPT
+/recipe\\[${COOKBOOK_NAME}/ {
+	s/${COOKBOOK_CURRENT_VERSION}/${COOKBOOK_NEW_VERSION}/
+}
+EOF
+chmod +x $SED_SCRIPT
+
+exec env EDITOR=$SED_SCRIPT "$@"
