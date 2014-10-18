@@ -29,6 +29,7 @@ COOKBOOK_NEW_VERSION=${1:-}
 shift
 
 cat <<EOF >$SED_SCRIPT
+#! /usr/bin/env sed -i -f
 /recipe\\[${COOKBOOK_NAME}/ {
 	s/${COOKBOOK_CURRENT_VERSION}/${COOKBOOK_NEW_VERSION}/
 }
