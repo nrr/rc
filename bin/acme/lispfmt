@@ -1,4 +1,6 @@
 #!/bin/sh
+# Cribbed from Steve McCoy (@mccoyst) on GitHub.
+# TODO: Munge this up to accept source text on /dev/stdin.
 
 files=*.lisp
 
