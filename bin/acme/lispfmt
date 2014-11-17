@@ -1,0 +1,16 @@
+#!/bin/sh
+
+files=*.lisp
+
+if [ -n "$1" ]
+then
+	files="$@"
+fi
+
+for f in $files
+do
+	emacs -batch "$f" \
+		--eval '(setq indent-tabs-mode nil)' \
+		--eval '(indent-region (point-min) (point-max) nil)' \
+		-f save-buffer
+done
