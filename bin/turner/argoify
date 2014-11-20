@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+exec env \
+	SDC_TESTING=true \
+	SDC_ACCOUNT=nreindl \
+	SDC_URL=https://10.63.8.24/ \
+	SDC_KEY_ID=e9:f5:2a:3a:7b:a7:90:cf:77:9f:03:35:c2:6e:7a:cc \
+	"$@"
