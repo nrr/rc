@@ -30,7 +30,31 @@
 .xterm*Scrollbar.background:	gray90
 .xterm*Scrollbar.minimumThumb:	20
 
-.xterm*Geometry: 132x48
+! From http://invisible-island.net/xterm/xterm.faq.html:
+!
+! Everything seems to work, except that the xterm menus (VT options, fonts, etc.)
+! do not display properly; the menus pop up, but only with a tiny display area in
+! which none of the options are visible (and only part of the menu title is
+! visible).
+!
+! You have specified the geometry for xterm too high in the hierarchy, and that
+! 24x80 (or whatever the -geometry parameter happens to be) is applying to the
+! menus in pixels. This resource makes the geometry apply to the menus as well as
+! the VT100 widget:
+!
+!     XTerm*geometry: 80x24
+!
+! while this applies only to the VT100 widget (which is probably what you
+! intended):
+!
+!     XTerm.VT100.geometry: 80x24
+!
+! or better yet (to allow for the toolbar option, which uses a level of widget
+! hierarchy):
+!
+!     XTerm*VT100.geometry: 80x24
+!
+XTerm*VT100.geometry: 132x48
 
 ! vncviewer scroll bars
 *viewport.horizontal.height:	10
