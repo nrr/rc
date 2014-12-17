@@ -1,0 +1,149 @@
+---
+listen_port: 16667
+password: BONDAGE_PASSWORD
+ 
+networks:
+  freenode:
+    server_host: "irc.freenode.net"
+    use_ssl: true
+    nickname: "nrr"
+    username: "nrr"
+    realname: "Nathaniel Reindl"
+    IDENTIFYING_BOILERPLATE
+    recall_mode: "missed"
+    log_public: true
+    log_private: true
+    log_sortbydate: true
+    log_restricted: true
+    log_dcc: true
+    log_notices: true
+    cycle_empty: true
+    away_poll: 300
+    NETWORK_SETTINGS_BOILERPLATE
+ 
+    channels:
+      "#magfest" : ""
+      "#keryx" : ""
+      "#atlassian" : ""
+      "#perl-cats" : ""
+      "#concatenative" : ""
+      "#jenkins" : ""
+ 
+  ircnet:
+    server_host: "us.ircnet.org"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+     
+    channels:
+      "#revision" : ""
+
+  nmt:
+    server_host: "irc.cs.nmt.edu"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#ktek" : ""
+
+  synirc:
+    server_host: "irc.synirc.net"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#svatg" : ""
+      "#vivisector" : ""
+      "#ocs" : ""
+
+  perl:
+    server_host: "irc.perl.org"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#web-simple" : ""
+      "#perl" : ""
+      "#moose" : ""
+      "#toolchain" : ""
+      "#cpantesters-discussion" : ""
+      "#distzilla" : ""
+      "#ubic" : ""
+      "#catalyst" : ""
+      "#dbix-class" : ""
+
+  anthrochat:
+    server_host: "irc.anthrochat.net"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#hackerfurs" : ""
+      "#huskies" : ""
+      "#dirtyanimals" : ""
+      "#fchan" : ""
+
+  espernet:
+    server_host: "irc.esper.net"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#mod_shrine" : ""
+      "#crashpadcafe" : ""
+
+  furnet:
+    server_host: "irc.furnet.org"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#bobchannel" : ""
+      "#doghouse" : ""
+      "#furaffinity" : ""
+      "#furaffinity-dev" : ""
+
+  yiffnet:
+    server_host: "irc.yiffnet.org"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#furry" : ""
+
+  ircfox:
+    server_host: "irc.ircfox.com"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#fnt" : ""
+      "#furcast" : ""
+
+  entropynet:
+    server_host: "irc.entropynet.net"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#lounge" : ""
+
+  turner:
+    server_host: "irc.turner.com"
+    use_ssl: true
+    IDENTIFYING_BOILERPLATE
+    NETWORK_SETTINGS_BOILERPLATE
+
+    channels:
+      "#app-ops" : ""
+      "#tech-ops" : ""
+      "#r-b-a" : ""
