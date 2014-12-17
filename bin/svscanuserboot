@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+PATH=/command:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin
+
+svc -dx *(/) */log(/)
+
+svscan . 2>&1 | readproctitle service errors: `perl -e 'print "."x400'`
