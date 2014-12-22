@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+if [ -x /usr/bin/pbcopy ]
+then
+	exec pbcopy
+fi
+
+if which xclip
+then
+	exec xclip -selection clipboard
+fi
