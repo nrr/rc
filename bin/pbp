@@ -5,7 +5,7 @@ then
 	exec pbpaste
 fi
 
-if which xclip
+if which xclip >/dev/null
 then
 	exec xclip -o -selection clipboard
 fi
