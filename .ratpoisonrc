@@ -1,0 +1,25 @@
+startup_message off
+
+# use global cursor positioning (not per-frame)
+warp off
+
+# move cursor out of the way when task switching
+addhook key banish
+
+set bgcolor black
+set fgcolor grey95
+set bargravity nw
+set barpadding 4 4
+msgwait 3
+
+set winname title
+set winfmt %n %s %t
+set winliststyle column
+set wingravity center
+set border 0
+
+definekey top C-space exec
+bind semicolon colon
+bind colon exec
+
+exec xsetroot -solid navy -cursor_name left_ptr
