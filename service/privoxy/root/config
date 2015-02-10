@@ -1,0 +1,2 @@
+listen-address 127.0.0.1:8118
+forward / 127.0.0.1:8123 .
