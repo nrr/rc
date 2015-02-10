@@ -23,3 +23,7 @@ bind semicolon colon
 bind colon exec
 
 exec xsetroot -solid navy -cursor_name left_ptr
+exec bash -c 'exec $HOME/bin/keyboard'
+exec bash -c 'exec $HOME/bin/mouse'
+exec bash -c 'exec $HOME/bin/tablet_wacom_ptk-440'
+exec pixelclock 23:00 05:30
