@@ -25,6 +25,12 @@ bind colon exec
 # Atlanta, GA 30303
 exec redshift -l 33.755711,-84.388372
 
+# St. Louis, MO 63101
+# exec redshift -l 38.6305,-90.1928
+
+# Berlin (Charlottenburg)
+# exec redshift -l 52.5167,13.3000
+
 exec xsetroot -solid navy -cursor_name left_ptr
 exec bash -c 'exec $HOME/bin/add-ssh-keys'
 exec bash -c 'exec $HOME/bin/keyboard'
