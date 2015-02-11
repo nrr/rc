@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-exec svlog -t ./main
+exec svlogd -t ./main
