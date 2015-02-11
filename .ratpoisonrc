@@ -22,6 +22,9 @@ definekey top C-space exec
 bind semicolon colon
 bind colon exec
 
+# Atlanta, GA 30303
+exec bash -c 'exec redshift -l 33.755711,-84.388372'
+
 exec xsetroot -solid navy -cursor_name left_ptr
 exec bash -c 'exec $HOME/bin/add-ssh-keys'
 exec bash -c 'exec $HOME/bin/keyboard'
