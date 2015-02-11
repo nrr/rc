@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 add_to_fontpath() {
 	addition="${1:-}"
 	[ -n "${addition}" ] || return 110
@@ -21,6 +23,7 @@ merge_in_resources() {
 
 }
 
+maybe_dbus_launch=$(which dbus-launch)
 export USERWM=$(which ratpoison)
 export USERWM=$(which xquartz)
 
@@ -61,4 +64,4 @@ then
 	unset fontpath
 fi
 
-exec $USERWM
+exec $maybe_dbus_launch $USERWM
