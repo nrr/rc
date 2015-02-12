@@ -31,6 +31,7 @@ exec redshift -l 33.755711,-84.388372
 # Berlin (Charlottenburg)
 # exec redshift -l 52.5167,13.3000
 
+exec wmname LG3D
 exec xsetroot -solid navy -cursor_name left_ptr
 exec bash -c 'exec $HOME/bin/add-ssh-keys'
 exec bash -c 'exec $HOME/bin/keyboard'
