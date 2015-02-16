@@ -1,13 +1,15 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
+set -u
 set -e
+set -o pipefail
 
 run() {
   echo "\$ $*"
   $*
 }
 
-PR_ID=$1
+PR_ID=${1:-}
 
 if [ -z "$PR_ID" ]; then
   echo "Usage: $(basename $0) <pull request id>"
@@ -18,5 +20,5 @@ if [[ "$PR_ID" =~ github.com ]]; then
   PR_ID=$(echo "$PR_ID" | sed 's#.\+/pull/\([0-9]\+\).*#\1#')
 fi
 
-run git-fetch origin "pull/${PR_ID}/head:pr-${PR_ID}"
-run git-checkout "pr-${PR_ID}"
+run git fetch origin "pull/${PR_ID}/head:pr-${PR_ID}"
+run git checkout "pr-${PR_ID}"
