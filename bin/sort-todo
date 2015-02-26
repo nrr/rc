@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -x
+set -u
+set -e
+set -o pipefail
+
+todo=${1:-$HOME/j/TODO.txt}
+temp=$(mktemp tmp.XXXXXXXXXX)
+cp -a $todo $temp
+grep -E '^[0-9]' $temp | sort -n > $todo
