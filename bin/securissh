@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+# securissh (secure-ish SSH) - SSH elsehwere without regard to what the
+# remote end's host key looks like
+
+set -u
+set -e
+set -o errexit
+set -o nounset
+set -o pipefail
+
+exec ssh \
+	-o StrictHostKeyChecking=no \
+	-o UserKnownHostsFile=/dev/null \
+	-o GlobalKnownHostsFile=/dev/null \
+	"$@"
