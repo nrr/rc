@@ -1,0 +1,107 @@
+#! /usr/bin/env bash
+
+set -u
+set -e
+set -o pipefail
+
+function notmuch::fetch::cli::toggle() {
+	local search_query="${1:-}"
+	local tag_operation="${2:-}"
+	local bogofilter_command="${3:-}"
+
+	notmuch search --output=messages tag:toggle and $search_query | while read id
+	do
+		notmuch show --format=raw $id | $bogofilter_command
+		notmuch tag -toggle -unsure $tag_operation -- $id
+	done
+}
+
+function notmuch::fetch::toggle() {
+	local search_query="${1:-}"
+	local tag_operation="${2:-}"
+	local bogofilter_command_if_unsure="${3:-}"
+	local bogofilter_command_if_sure="${4:-}"
+
+	notmuch::fetch::cli::toggle \
+		"$search_query and tag:unsure" \
+		"$tag_operation" \
+		"$bogofilter_command_if_unsure" \
+		"$bogofilter_command_if_sure"
+
+}
+
+function notmuch::fetch::correct_misclassified() {
+	toggle \
+		"tag:spam" \
+		"-spam" \
+		"bogofilter -n" \
+		"bogofilter -Sn"
+	toggle \
+		"not tag:spam" \
+		"+spam" \
+		"bogofilter -s" \
+		"bogofilter -Ns"
+
+	notmuch search --output=messages tag:unsure and tag:ham | while read id
+	do
+		notmuch show --format=raw $id | bogofilter -n
+		notmuch tag -unsure -ham $2 -- $id
+	done
+}
+
+
+function notmuch::fetch::fetch_new() {
+	rsync -auvHSP --exclude=.notmuch seraph.corp.yaks.io:~/Maildir/. $HOME/Maildir/.
+	notmuch new
+}
+
+
+function notmuch::fetch::classify_new() {
+	declare -i mi=0
+	declare -a ids=( $(notmuch search --output=messages tag:unclassified) )
+
+	for i in ${!ids[*]}
+	do
+		echo "$(notmuch search --output=files ${ids[$i]})"
+		done | \
+	bogofilter -buT 2>/dev/null | while read score
+	do
+		id=${ids[$mi]}
+
+		# score = <filename> <indicator> <score>
+		case $score in
+		*\ H\ *)
+			notmuch \
+			tag -unclassified \
+			-- \
+			$id
+			;;
+		*\ S\ *)
+			notmuch \
+			tag -unclassified +spam \
+			-- \
+			$id
+			;;
+		*\ U\ *)
+			notmuch \
+			tag -unclassified +unsure \
+			-- \
+			$id
+			;;
+		*)
+			echo "Invalid bogofilter score: $score"
+			exit 1
+			;;
+		esac
+
+		mi=$(( $mi + 1 ))
+	done
+}
+
+function main() {
+	notmuch::fetch::correct_misclassified && \
+	notmuch::fetch::fetch_new && \
+	notmuch::fetch::classify_new
+}
+
+main "$@"
