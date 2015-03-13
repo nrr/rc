@@ -3,7 +3,6 @@
 	name = Nathaniel Reindl
 
 [alias]
-	diff-remote = diff origin..master
 	ff = pull --ff-only
 	export-branch = !git format-patch --stdout $1 > ~/Desktop/`git branch-name`.diff
 	branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
@@ -19,7 +18,10 @@
 	lol = log --oneline --graph --decorate
 	lawl = log --all --oneline --graph --decorate
 	d = diff --color-words
-	dh = diff --color-words head
+	dc = diff --check
+	dm = diff --color-words master..HEAD
+	do = diff --color-words origin..HEAD
+	ds = diff --color-words --cached
 	master = checkout master
 	spull = svn rebase
 	spush = svn dcommit
