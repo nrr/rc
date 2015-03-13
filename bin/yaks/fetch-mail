@@ -25,7 +25,10 @@ function notmuch::fetch::toggle() {
 	notmuch::fetch::cli::toggle \
 		"$search_query and tag:unsure" \
 		"$tag_operation" \
-		"$bogofilter_command_if_unsure" \
+		"$bogofilter_command_if_unsure"
+	notmuch::fetch::cli::toggle \
+		"$search_query" \
+		"$tag_operation" \
 		"$bogofilter_command_if_sure"
 
 }
