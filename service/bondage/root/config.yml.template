@@ -1,6 +1,6 @@
 ---
-listen_port: 16667
-password: BONDAGE_PASSWORD
+listen_port: @BONDAGE_PORT@
+password: @BONDAGE_PASSWORD@
  
 networks:
   freenode:
@@ -9,7 +9,7 @@ networks:
     nickname: "nrr"
     username: "nrr"
     realname: "Nathaniel Reindl"
-    IDENTIFYING_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
     recall_mode: "missed"
     log_public: true
     log_private: true
@@ -19,7 +19,7 @@ networks:
     log_notices: true
     cycle_empty: true
     away_poll: 300
-    NETWORK_SETTINGS_BOILERPLATE
+    @NETWORK_SETTINGS_BOILERPLATE@
  
     channels:
       "#magfest" : ""
@@ -32,8 +32,8 @@ networks:
   ircnet:
     server_host: "us.ircnet.org"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
      
     channels:
       "#revision" : ""
@@ -41,8 +41,8 @@ networks:
   nmt:
     server_host: "irc.cs.nmt.edu"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#ktek" : ""
@@ -50,8 +50,8 @@ networks:
   synirc:
     server_host: "irc.synirc.net"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#svatg" : ""
@@ -61,8 +61,8 @@ networks:
   perl:
     server_host: "irc.perl.org"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#web-simple" : ""
@@ -78,8 +78,8 @@ networks:
   anthrochat:
     server_host: "irc.anthrochat.net"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#hackerfurs" : ""
@@ -90,8 +90,8 @@ networks:
   espernet:
     server_host: "irc.esper.net"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#mod_shrine" : ""
@@ -100,8 +100,8 @@ networks:
   furnet:
     server_host: "irc.furnet.org"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#bobchannel" : ""
@@ -112,8 +112,8 @@ networks:
   yiffnet:
     server_host: "irc.yiffnet.org"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#furry" : ""
@@ -121,8 +121,8 @@ networks:
   ircfox:
     server_host: "irc.ircfox.com"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#fnt" : ""
@@ -131,8 +131,8 @@ networks:
   entropynet:
     server_host: "irc.entropynet.net"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#lounge" : ""
@@ -140,8 +140,8 @@ networks:
   turner:
     server_host: "irc.turner.com"
     use_ssl: true
-    IDENTIFYING_BOILERPLATE
-    NETWORK_SETTINGS_BOILERPLATE
+    @IDENTIFYING_BOILERPLATE@
+    @NETWORK_SETTINGS_BOILERPLATE@
 
     channels:
       "#app-ops" : ""
