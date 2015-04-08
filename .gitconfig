@@ -26,8 +26,8 @@
 	spull = svn rebase
 	spush = svn dcommit
 	alias = !git config --get-regexp 'alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
-	fixme = grep --heading --break --ignore-case -e 'FIX: *' -e 'FIXME: *' -e 'XXX: *'
-	todo  = grep --heading --break --ignore-case -e 'TODO: *'
+	fixme = grep --heading --break -e 'FIX: *' -e 'FIXME*' -e 'XXX*'
+	todo  = grep --heading --break -e 'TODO*'
 	bbb = reset --hard HEAD^
 
 [color]
