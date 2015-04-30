@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+env \
+	MANTA_URL=https://us-east.manta.joyent.com \
+	MANTA_USER=nrr \
+	MANTA_KEY_ID=98:f9:7a:1e:14:49:d5:f1:10:a1:92:fa:33:78:45:a5 \
+	"$@"
