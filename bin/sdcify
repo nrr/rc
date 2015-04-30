@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+exec env \
+	SDC_URL=https://us-east-1.api.joyentcloud.com \
+	SDC_ACCOUNT=nrr \
+	SDC_KEY_ID=98:f9:7a:1e:14:49:d5:f1:10:a1:92:fa:33:78:45:a5 \
+	"$@"
