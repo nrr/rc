@@ -1,7 +1,7 @@
 #! /usr/bin/env rc
 tabstop=4
-font=$PLAN9/font/lucsans/unicode.6.font
-tfont=$PLAN9/font/lucsans/typeunicode.6.font
+font=$PLAN9/font/lucsans/unicode.8.font
+tfont=$PLAN9/font/lucsans/typeunicode.8.font
 path=($home/bin/acme $path)
 
 main=`{namespace}
