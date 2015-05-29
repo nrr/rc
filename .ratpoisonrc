@@ -18,6 +18,8 @@ set winliststyle column
 set wingravity center
 set border 0
 
+alias date exec ratpoison -c "echo $(date)"
+
 definekey top C-space exec
 definekey top XF86AudioRaiseVolume exec bash -c 'exec $HOME/bin/v+'
 definekey top XF86AudioMute exec bash -c 'exec $HOME/bin/mute'
