@@ -1,0 +1,11 @@
+#! /usr/bin/env rc
+
+exec awk '{
+	lower = tolower($0)
+	upper = toupper($0)
+	len = length($0)
+
+	for (i = 1 ; i <= len ; i++)
+		printf "[" substr(upper, i, 1) substr(lower, i, 1) "]"
+	printf "\n"
+}'

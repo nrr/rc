@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+require 'yaml'
+
+begin
+	puts YAML.load($stdin.read).to_yaml
+rescue
+	puts $stdin.read
+end

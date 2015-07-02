@@ -1,0 +1,7 @@
+#! /usr/bin/env rc
+
+for (w in `{9p ls acme | grep '^[0-9]'}) {
+	if (9p read acme/$w/tag | grep -s '^'$0) {
+		echo delete | 9p write acme/$w/ctl
+	}
+}

@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+exec fmt -c -w 72

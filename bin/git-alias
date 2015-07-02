@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+exec git config --list | grep 'alias\.' | sed 's/alias\.\([^=]*\)=\(.*\)/\1\t => \2/' | sort

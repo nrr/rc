@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+export_branch() {
+	local git_branch_name=$(git branch-name)
+	exec git format-patch --stdout "$1" > /tmp/$git_branch_name.diff
+}
+
+if git rev-parse --abbrev-ref HEAD
+then
+	export_branch "$@"
+else
+	exit 110
+fi

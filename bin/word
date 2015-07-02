@@ -1,0 +1,2 @@
+#! /bin/sh
+echo `cat /dev/urandom | od -N4 -An -i `' % '`wc -l < /usr/share/dict/words` | bc | sed 's/-//g' | xargs -I % head -n % /usr/share/dict/words | tail -n 1 

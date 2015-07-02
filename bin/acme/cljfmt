@@ -1,0 +1,16 @@
+#! /usr/bin/env lein-exec
+
+(use 'clojure.pprint)
+
+;;(defn read-stdin []
+;;    (loop [contents ""]
+;;        (let [new-contents (.read *in*)]
+;;            (when (>= new-contents 0)
+;;                [contents])
+;;            (recur (str contents new-contents)))))
+
+(clojure.pprint/write
+    (read-string (slurp "/dev/stdin"))
+        :dispatch clojure.pprint/code-dispatch)
+
+;;(with-pprint-dispatch *code-dispatch* (read-string (slurp "/dev/stdin")))
