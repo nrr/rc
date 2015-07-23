@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+exec dig -x $(dig +short "$@")
