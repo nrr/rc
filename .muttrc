@@ -4,11 +4,15 @@ unset allow_cursor
 set realname="Nathaniel Reindl"
 unmy_hdr *
 
-set record = +sent-`date +%Y%m`
-set sort = threads
 set mbox_type = Maildir
-set mbox = ~/Mail/read-`date +%Y%m`
-set editor = "vim"
+set folder = $HOME/Mail
+set spoolfile = +INBOX
+set header_cache = ~/.cache/mutt
+mailboxes = +INBOX +Archive +Drafts +Sent +__follow_up
+set postponed = +Drafts
+set record = +Sent
+
+set sort = threads
 set envelope_from = yes
 set edit_headers = yes
 toggle help
