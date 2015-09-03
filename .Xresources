@@ -1,34 +1,56 @@
 ! xterm
-.xterm*background:		gray10
-.xterm*cursorColor:		green
-.xterm*foreground:		white
-.xterm*borderColor:		green
-.xterm*colorBD:			black
-.xterm*colorBDMode:		false
-.xterm*saveLines:      65535
-.xterm*scrollBar:		true
-.xterm*scrollbar*width:		8
+.xterm*background: gray10
+.xterm*cursorColor: green
+.xterm*foreground: white
+.xterm*borderColor: green
+.xterm*colorBD: black
+.xterm*colorBDMode: false
+.xterm*saveLines: 65535
+.xterm*scrollBar: true
+.xterm*scrollbar*width: 8
+.xterm*boldMode: false
+.xterm*faceName: Monospace
+.xterm*faceSize: 8
+.xterm*font: 6x13
 
-.xterm*selectToClipboard:	true
-.xterm*utmpInhibit:		true
+.xterm*selectToClipboard: true
+.xterm*utmpInhibit: true
 ! hide when i type
-.xterm*pointerMode:		1
+.xterm*pointerMode: 1
 
-.xterm*allowSendEvents:		false
-.xterm*dynamicColors:		true
-.xterm*allowColorOps:		true
-.xterm*eightBitInput:   false
-.xterm*eightBitOutput:  true
+.xterm*allowSendEvents: false
+.xterm*dynamicColors: true
+.xterm*allowColorOps: true
+.xterm*eightBitInput: false
+.xterm*eightBitOutput: true
 
-.xterm*title:			xterm
-.xterm*termName:		xterm-256color
+.xterm*title: xterm
+.xterm*termName: xterm-256color
 
-.xterm*visualBell:		false
-.xterm*cursorBlink:		true
+.xterm*visualBell: false
+.xterm*cursorBlink: true
 
-.xterm*Scrollbar.foreground:	gray10
-.xterm*Scrollbar.background:	gray90
-.xterm*Scrollbar.minimumThumb:	20
+.xterm*Scrollbar.foreground: gray10
+.xterm*Scrollbar.background: gray90
+.xterm*Scrollbar.minimumThumb: 20
+
+! From https://unix4lyfe.org/xterm/
+.xterm*color0: rgb:00/00/00
+.xterm*color1: rgb:a8/00/00
+.xterm*color2: rgb:00/a8/00
+.xterm*color3: rgb:a8/54/00
+.xterm*color4: rgb:00/00/a8
+.xterm*color5: rgb:a8/00/a8
+.xterm*color6: rgb:00/a8/a8
+.xterm*color7: rgb:a8/a8/a8
+.xterm*color8: rgb:54/54/54
+.xterm*color9: rgb:fc/54/54
+.xterm*color10: rgb:54/fc/54
+.xterm*color11: rgb:fc/fc/54
+.xterm*color12: rgb:54/54/fc
+.xterm*color13: rgb:fc/54/fc
+.xterm*color14: rgb:54/fc/fc
+.xterm*color15: rgb:fc/fc/fc
 
 ! From http://invisible-island.net/xterm/xterm.faq.html:
 !
@@ -53,7 +75,10 @@
 ! hierarchy):
 !
 !     XTerm*VT100.geometry: 80x24
-!
+ 
+! Yes, yes, "80-character VTs aren't just a good idea; they're the law."
+! Sometimes, figuratively speaking, you just need more road to get to
+! 88 mph.
 XTerm*VT100.geometry: 132x48
 
 ! vncviewer scroll bars
