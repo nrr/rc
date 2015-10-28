@@ -1,13 +1,14 @@
 KEYCHAIN=$(which keychain)
 
-if [ -d $HOME/j/sciolist ]
-then
-	export PATH=$HOME/j/sciolist/bin:$PATH
-fi
-
 if [ -x "$KEYCHAIN" ]
 then
 	eval $("$KEYCHAIN" --eval)
+
+fi
+
+if [ -d $HOME/j/sciolist ]
+then
+	export PATH=$HOME/j/sciolist/bin:$PATH
 
 	for key in ~/.ssh/id_rsa $(find -L ~/.ssh/keys '(' -type f -o -type l ')' -iname 'id_rsa')
 	do
