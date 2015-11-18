@@ -43,3 +43,5 @@
 	default = matching
 [merge]
 	ff = false
+[core]
+        excludesfile = /Users/nrr/.gitignore.global
