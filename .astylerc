@@ -298,4 +298,3 @@ min-conditional-indent=0
 #             barArg2,
 #             barArg3);
 #
-max-instatement-indent=9
