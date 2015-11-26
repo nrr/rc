@@ -1,6 +1,0 @@
-#! /usr/bin/env bash
-
-exec 2>&1
-exec chpst -e ./env bash -c '
-	exec chpst -u $USER:$GROUP mpd --stdout --no-daemon ./root/config
-'
