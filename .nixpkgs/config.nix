@@ -6,8 +6,12 @@
 			paths = [
 				ledger
 				curl
-				emacs
 				git
+				subversion
+				s6
+				polipo
+				privoxy
+				offlineimap
 			];
 		};
 	};
