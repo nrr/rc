@@ -1,4 +1,4 @@
-#! /usr/bin/env rc
+#! /usr/bin/env 9 rc
 tabstop=4
 font=$PLAN9/font/lucsans/unicode.8.font
 tfont=$PLAN9/font/lucsans/typeunicode.8.font
