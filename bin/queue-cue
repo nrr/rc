@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+todo-add $TODOS_QUICKADD 0 "$@"
