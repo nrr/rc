@@ -1,3 +1,7 @@
 #! /usr/bin/env bash
 
+set -e
+set -u
+set -o pipefail
+
 todo-add $TODOS_QUICKADD 0 "$@"
