@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+current_remote_url="$(git config --get --local remote.origin.url)"
+
+case "$current_remote_url" in
+*scm.vgtf.net*)
+	git config --local user.name "Nathaniel Reindl"
+	git config --local user.email "nathaniel.reindl@turner.com"
+	;;
+*commiss.io*)
+	git config --local user.name "Nathaniel Reindl"
+	git config --local user.email "nathaniel@commiss.io"
+	;;
+*)
+	git config --local user.name "Nathaniel Reindl"
+	git config --local user.email "nrr@corvidae.org"
+	;;
+esac
+	
+printf "Committing as %s\n" "$(git config --get user.email)"
+
+exit 0
