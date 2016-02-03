@@ -1,3 +1,0 @@
-#! /usr/bin/env bash
-
-setxkbmap us -variant altgr-intl -option -option ctrl:nocaps -option compose:prsc

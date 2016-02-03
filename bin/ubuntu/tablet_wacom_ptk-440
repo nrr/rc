@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-
-DEVICE="Wacom Intuos4 4x6 pad"
-xsetwacom set "$DEVICE" AbsWheelUp "4"
-xsetwacom set "$DEVICE" RelWheelUp "4"
-xsetwacom set "$DEVICE" AbsWheelDown "5"
-xsetwacom set "$DEVICE" RelWheelDown "5"
-xsetwacom set "$DEVICE" Rotate half

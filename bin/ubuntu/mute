@@ -1,3 +1,0 @@
-#! /usr/bin/env bash
-
-exec pactl set-sink-mute 0 toggle
