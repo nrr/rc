@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+todo-cat $TODOS | todo-filter-undone | todo-filter-today
