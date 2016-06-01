@@ -21,10 +21,6 @@ export PS1="${prompt_prepend}(\$?)${color_prepend}\h${color_append}\\$ "
 
 unset prompt_prepend
 
-[ "x$TERM_PROGRAM" == "xApple_Terminal" -a \
-	-f $HOME/bin/RandomColorTerminal.scpt ] &&
-	cat $HOME/bin/RandomColorTerminal.scpt | osascript -
-
 # Local Variables:
 # mode:shell-script
 # End:
