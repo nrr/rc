@@ -1,6 +1,7 @@
 [user]
 	email = nrr@corvidae.org
 	name = Nathaniel Reindl
+	signingkey = 1CB76F2B66C7D0F1
 
 [alias]
 	ff = pull --ff-only
@@ -42,3 +43,5 @@
 	ff = false
 [core]
         excludesfile = /Users/nrr/.gitignore.global
+[commit]
+	gpgsign = true
