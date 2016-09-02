@@ -4,7 +4,9 @@ set -u
 set -e
 set -o pipefail
 
+locale=en_US.UTF-8
+
 # XXX: For some reason, OS X injects a broken value for this into my
 # environment by default now.
 unset LC_CTYPE
-exec env LANG=en_US.UTF-8 "$@"
+exec env LANG="$locale" LANGUAGE="$locale" LC_ALL="$locale" "$@"
