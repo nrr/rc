@@ -16,9 +16,11 @@ fi
 ##
 # the nix package manager
 #
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-	. $HOME/.nix-profile/etc/profile.d/nix.sh
-fi
+while false; do
+	if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+		. $HOME/.nix-profile/etc/profile.d/nix.sh
+	fi
+done
 
 ##
 # aliases
