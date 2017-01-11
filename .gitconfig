@@ -27,6 +27,9 @@
 	fixme = grep --heading --break -e 'FIX: *' -e 'FIXME*' -e 'XXX*'
 	todo  = grep --heading --break -e 'TODO*'
 	bbb = reset --hard HEAD^
+	this = rev-parse --abbrev-ref HEAD
+	publish = !git push origin +$( git this )
+	unpublish = !git push origin :$( git this)
 
 [color]
 	ui = true
