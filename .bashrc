@@ -1,5 +1,5 @@
 ##
-# the PATH
+# start off on a good PATH
 #
 PATH="$(PATH=/bin:/usr/bin:/sbin:/usr/sbin getconf PATH)"
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
@@ -25,6 +25,7 @@ done
 ##
 # aliases
 #
+alias cd='cd -P'
 alias sl='ls' # because I tend to typo this one stupidly often
 alias ls='ls -shF'
 
@@ -32,18 +33,16 @@ alias ls='ls -shF'
 # sundry environment variables
 #
 EDITOR=ed
+VISUAL=vi
+unset FCEDIT
 
-if which emacsclient >/dev/null; then
-	VISUAL=emacsclient
-	unset FCEDIT
-else
-	VISUAL=vi
+if [ -e $HOME/bin/start-emacs ]; then
+	VISUAL="$HOME/bin/start-emacs"
 fi
 
 VERSION_CONTROL="numbered"
-GIT_TEMPLATE_DIR="$HOME/.git_template"
 
-export GIT_TEMPLATE_DIR VERSION_CONTROL EDITOR VISUAL
+export VERSION_CONTROL EDITOR VISUAL
 
 ##
 # fasd

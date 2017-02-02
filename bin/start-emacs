@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -u
+set -e
+set -o pipefail
+
+which emacs 2>&1 >/dev/null || exit 110
+which emacsclient 2>&1 >/dev/null || exit 110
+
+emacs --daemon || true
+exec emacsclient -c "$@"
