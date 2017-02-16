@@ -1,7 +1,2 @@
-case "$-" in
-*i*)
-	clear
-	;;
-*)
-	;;
-esac
+# ~/.bash_logout
+
