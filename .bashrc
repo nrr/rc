@@ -3,7 +3,7 @@
 #
 PATH="$(PATH=/bin:/usr/bin:/sbin:/usr/sbin getconf PATH)"
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-PATH="$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
 ##
