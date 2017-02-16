@@ -10,17 +10,15 @@ export PATH
 # the system bashrc
 #
 if [ -f /etc/bashrc ]; then
-        source /etc/bashrc
+    source /etc/bashrc
 fi
 
 ##
 # the nix package manager
 #
-while false; do
-	if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-		. $HOME/.nix-profile/etc/profile.d/nix.sh
-	fi
-done
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+    . $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
 
 ##
 # aliases
@@ -34,25 +32,44 @@ alias ls='ls -shF'
 #
 EDITOR=ed
 VISUAL=vi
+ALTERNATE_EDITOR=""
 unset FCEDIT
 
-if [ -e $HOME/bin/start-emacs ]; then
-	VISUAL="$HOME/bin/start-emacs"
+if command -v emacsclient >/dev/null; then
+    EDITOR=emacsclient
 fi
 
 VERSION_CONTROL="numbered"
 
-export VERSION_CONTROL EDITOR VISUAL
+export VERSION_CONTROL EDITOR VISUAL ALTERNATE_EDITOR
 
 ##
 # fasd
 #
 fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+    fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
 fi
 source "$fasd_cache"
 unset fasd_cache
+
+##
+# rbenv
+#
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
+if command -v rbenv >/dev/null; then
+    eval "$(rbenv init -)"
+fi
+
+##
+# keychain
+#
+if command -v keychain >/dev/null; then
+    eval "$(keychain --agents gpg,ssh --eval)"
+fi
 
 ##
 # shell prompt
