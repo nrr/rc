@@ -1,1 +1,4 @@
 diff -uNp
+update -dP
+rdiff -u
+cvs -q
