@@ -1,0 +1,133 @@
+#!/usr/bin/perl -w
+use strict;
+use Getopt::Std;
+use Net::hostent;
+use Socket;
+sub grep_known_hosts();
+sub host_exists(;$);
+sub init();
+sub scan_dns();
+sub search(@);
+sub simple_search();
+
+my $MAX_MISSES = 3;
+my $DEFAULT_DOMAIN = 'turner.com';
+my $KNOWN_HOSTS = "$ENV{HOME}/.ssh/known_hosts";
+my %opt = init;
+my @required = map lc, @ARGV;
+
+scan_dns if $opt{f};
+simple_search;
+
+
+######
+sub grep_known_hosts() {
+	local (*IN, $_);
+	my %seen;
+
+	open IN, $KNOWN_HOSTS or die qq{$0 couldn't read "$KNOWN_HOSTS": $!\n};
+	while (<IN>) {
+		chomp;
+		s/[, ].*// or next;
+		$_ = lc;
+		my ($h, $d) = /\./? ($`, $'): ($_, $DEFAULT_DOMAIN);
+
+		my $ok = 1;
+		for my $r (@required) {
+			if ($opt{d} and $d !~ /$opt{d}/oi) {
+				$ok = 0;
+				last;
+			}
+			elsif ($h !~ /$r/i) {
+				$ok = 0;
+				last;
+			}
+		}
+		next if not $ok;
+
+		$seen{$_}++;
+	}
+	close IN;
+
+	return sort keys %seen;
+}
+
+
+######
+sub host_exists(;$) {
+	local $_ = @_? shift: $_;
+	return defined gethost $_;
+}
+
+
+######
+sub init() {
+        $0 =~ s#.*/##;
+        my $usage = <<USAGE;
+usage: $0 [options] regexes
+Lists hostnames in your ~/.ssh/known_hosts matching all the regexes.
+
+usage: $0 -f [options] regexes
+Scans DNS for hostnames similar to those in your ~/.ssh/known_hosts and
+attempts to ssh into them (thus populating your ~/.ssh/known_hosts).
+
+Options:
+	-d regex	Omit hosts with a domain suffix matching regex.
+USAGE
+        my %opt = ();
+        getopts 'd:fhv', \%opt and not $opt{h} and @ARGV or die $usage;
+        return %opt;
+}
+
+
+######
+sub scan_dns() {
+	my %hosts;
+	my %known_hosts;
+	my %patterns;
+	for (grep_known_hosts) {
+		$hosts{$_} = 1;
+		s/^([^\.]+[^\.\d])(\d+)(.*)/$1\%d$3/ or next;
+		$patterns{$_} = 1;
+	}
+
+	for my $p (sort keys %patterns) {
+		my $misses = 0;
+		my $i = 1;
+		while (1) {
+			(my $h = $p) =~ s/%d/$i/;
+			$i++;
+
+			if (exists $hosts{$h}) {
+				$misses = 0;
+				$known_hosts{$h} = 1;
+				warn qq{$0 found $h in known_hosts\n} if $opt{v};
+			}
+			elsif (host_exists $h) {
+				$misses = 0;
+				$hosts{$h} = 1;
+				warn qq{$0 can resolve $h\n} if $opt{v};
+			}
+			else {
+				$misses++;
+				warn qq{$0: no $h\n} if $opt{v};
+				last if $MAX_MISSES <= $misses;
+			}
+		}
+	}
+
+	for my $h (sort keys %hosts) {
+		next if $known_hosts{$h};
+		my $cmd = qq{ssh -n -o ConnectTimeout=3 -o ConnectionAttempts=1 $h true};
+		warn "Running: $cmd\n" if $opt{v};
+		system $cmd;
+	}
+}
+
+
+######
+sub simple_search() {
+	print map "$_\n", grep_known_hosts;
+}
+
+
