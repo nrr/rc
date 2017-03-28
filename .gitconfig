@@ -12,6 +12,7 @@
 	c = commit
 	cm = commit -m
 	ca = commit --amend # careful
+	cers = shortlog -s -n
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
 	lol = log --oneline --graph --decorate
@@ -21,6 +22,7 @@
 	dm = diff --color-words master..HEAD
 	do = diff --color-words origin..HEAD
 	ds = diff --color-words --cached
+	reup = pull --rebase
 	master = checkout master
 	spull = svn rebase
 	spush = svn dcommit
@@ -29,7 +31,7 @@
 	bbb = reset --hard HEAD^
 	this = rev-parse --abbrev-ref HEAD
 	publish = !git push origin +$( git this )
-	unpublish = !git push origin :$( git this)
+	unpublish = !git push origin :$( git this )
 
 [color]
 	ui = true

@@ -46,12 +46,14 @@ export VERSION_CONTROL EDITOR VISUAL ALTERNATE_EDITOR
 ##
 # fasd
 #
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-    fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+if command -v fasd >/dev/null; then
+    fasd_cache="$HOME/.fasd-init-bash"
+    if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+        fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+    fi
+    source "$fasd_cache"
+    unset fasd_cache
 fi
-source "$fasd_cache"
-unset fasd_cache
 
 ##
 # rbenv
@@ -68,7 +70,19 @@ fi
 # keychain
 #
 if command -v keychain >/dev/null; then
-    eval "$(keychain --agents gpg,ssh --eval)"
+    if command -v ssh-agent >/dev/null; then
+        agents="$agents,ssh"
+    fi
+
+    if command -v gpg-agent >/dev/null; then
+        agents="$agents,gpg"
+    fi
+
+    if [ -n $agents ]; then
+        agents="--agents $agents"
+    fi
+
+    eval "$(keychain $agents --eval)"
 fi
 
 ##
