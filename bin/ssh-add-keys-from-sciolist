@@ -13,7 +13,7 @@ do
 s6t-ssh-askpass "$key"
 EOF
 
-	env DISPLAY= SSH_ASKPASS="$askpass_script" ssh-add -K $key </dev/null
+	env DISPLAY= SSH_ASKPASS="$askpass_script" ssh-add $key </dev/null
 
 	rm "$askpass_script"
 done
