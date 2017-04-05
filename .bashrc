@@ -69,6 +69,10 @@ fi
 ##
 # keychain
 #
+if [ -d $HOME/j/sciolist ]; then
+	  export PATH=$HOME/j/sciolist/bin:$PATH
+fi
+
 if command -v keychain >/dev/null; then
     if command -v ssh-agent >/dev/null; then
         agents="$agents,ssh"
