@@ -50,3 +50,5 @@
         excludesfile = /Users/nrr/.gitignore.global
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg2

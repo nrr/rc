@@ -17,33 +17,64 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '((git :variables
+   '(;; Contrib layers
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
+                      auto-completion-enable-help-tooltip 'manual
+                      :disabled-for
+                      org)
+     better-defaults
+     bibtex
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
+     command-log
+     csharp
+     csv
+     dash
+     deft
+     elixir
+     emacs-lisp
+     emoji
+     erlang
+     ess
+     extra-langs
+     fasd
+     finance
+     (git :variables
           git-gutter-use-fringe t)
+     go
+     graphviz
+     html
+     javascript
+     latex
+     lua
+     markdown
+     nixos
+     octave
+     org
+     osx
+     php
+     racket
+     (ranger :variables
+             ranger-override-dired t)
+     ruby
+     ruby-on-rails
+     scheme
+     shaders
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     dash
-     php
-     lua
-     javascript
-     go
-     auto-completion
-     better-defaults
-     emacs-lisp
-     markdown
-     org
-     osx
-     deft
-     finance
-     html
-     ruby
-     ruby-on-rails
-     yaml
+     shell-scripts
      spell-checking
      syntax-checking
-     version-control
      terraform
-     nixos)
+     typescript
+     typography
+     version-control
+     yaml)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -271,7 +302,7 @@ you should place your code here."
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(evil-want-Y-yank-to-eol t)
- '(fci-rule-color "#073642")
+ '(fci-rule-color "#073642" t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-symbol-colors
    (--map
@@ -340,7 +371,7 @@ you should place your code here."
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (projectile-rails inflections feature-mode monokai-theme solarized-theme go-guru go-eldoc company-go go-mode terraform-mode hcl-mode powerline rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake spinner org alert log4e gntp markdown-mode hydra parent-mode projectile request gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip flycheck pkg-info epl flx magit magit-popup git-commit with-editor smartparens iedit anzu evil goto-chg undo-tree highlight s diminish chruby bundler inf-ruby bind-map bind-key packed dash helm avy helm-core async popup package-build pug-mode minitest yaml-mode web-mode tagedit slim-mode scss-mode sass-mode less-css-mode jade-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data mwim helm-company helm-c-yasnippet deft company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl uuidgen org-projectile pcache org-download link-hint hide-comnt git-link eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump f column-enforce-mode xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle shell-pop restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (typo ranger org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib geiser ess-smart-equals ess-R-object-popup ess-R-data-view ctable ess julia-mode emoji-cheat-sheet-plus csv-mode company-quickhelp company-emoji biblio biblio-core fasd disaster company-c-headers command-log-mode cmake-mode clang-format omnisharp shut-up insert-shebang fish-mode csharp-mode company-shell ledger-mode js2-refactor helm-dash projectile-rails inflections feature-mode monokai-theme solarized-theme go-guru go-eldoc company-go go-mode terraform-mode hcl-mode powerline rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake spinner org alert log4e gntp markdown-mode hydra parent-mode projectile request gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip flycheck pkg-info epl flx magit magit-popup git-commit with-editor smartparens iedit anzu evil goto-chg undo-tree highlight s diminish chruby bundler inf-ruby bind-map bind-key packed dash helm avy helm-core async popup package-build pug-mode minitest yaml-mode web-mode tagedit slim-mode scss-mode sass-mode less-css-mode jade-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data mwim helm-company helm-c-yasnippet deft company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl uuidgen org-projectile pcache org-download link-hint hide-comnt git-link eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump f column-enforce-mode xterm-color ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle shell-pop restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help elisp-slime-nav diff-hl define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
