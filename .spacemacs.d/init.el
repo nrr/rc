@@ -80,6 +80,10 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(org-plus-contrib
+                                      nameless
+                                      nginx-mode
+                                      helm-flycheck
+                                      defproject
                                       dracula-theme)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
