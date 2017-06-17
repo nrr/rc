@@ -47,9 +47,6 @@
 [merge]
 	ff = false
 [core]
-	# I have a .gitignore in my home directory already since I keep my dotfiles
-	# under version control.
-	excludesfile = ~/.gitignore.excludesfile
 [commit]
 	gpgsign = true
 [gpg]
