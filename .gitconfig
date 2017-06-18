@@ -35,6 +35,9 @@
 
 [color]
 	ui = true
+	diff = auto
+	status = auto
+	branch = auto
 
 [tar "tar.xz"]
 	command = xz -c
@@ -46,8 +49,12 @@
 	default = matching
 [merge]
 	ff = false
+	conflictStyle = diff3
 [core]
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg2
+[core]
+	autocrlf = false
+	filemode = false
