@@ -53,8 +53,6 @@
 [core]
 [commit]
 	gpgsign = true
-[gpg]
-	program = gpg2
 [core]
 	autocrlf = false
 	filemode = false
