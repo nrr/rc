@@ -98,6 +98,13 @@ if command -v keychain >/dev/null; then
 fi
 
 ##
+# hub
+#
+if command -v hub >/dev/null; then
+    eval "$(hub alias -s)"
+fi
+
+##
 # shell prompt
 #
 prompt_prepend=""
