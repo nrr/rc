@@ -94,7 +94,7 @@ if command -v keychain >/dev/null; then
         agents="--agents $agents"
     fi
 
-    eval "$(keychain $agents --eval --inherit any 0x1CB76F2B66C7D0F1)"
+    eval "$(keychain $agents --noask --quiet --eval --inherit any 0x1CB76F2B66C7D0F1)"
 fi
 
 ##
